@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    
+    <h1>To-Do List</h1>
+
+
+    <%- include("add-data.ejs") %>
+
+
+    <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=-1" class="sortOne"> Sortera Z-A </a>
+   <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=1" class="sortTwo"> Sortera A-Z  </a>
+   
+
+    <% for(let i=0; i <data.length; i++) { %>
+
+    <div> <%= data[i].name %> 
+    
+    <a href="/edit/<%= data[i]._id %>" class="editButton" > edit</a>
+
+    <a href="/delete/<%= data[i]._id %>" class="deleteButton"> delete</a>
+
+</div>
+
+    <% } %>
+
+
+    <% if(totalDataPart !== dataToShow/dataToShowPerReq) { %>
+        <a href="/?page=<%=(dataToShow/dataToShowPerReq)+1%>" class="moreButton">
+        Visa flera
+        </a>
+
+    <% } else { %>
+        <a href="/?page=1" class="lessButton">
+            visa mindre
+        </a>
+    <% } %>
+
+
+</body>
+</html>

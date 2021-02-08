@@ -1,0 +1,85 @@
+body {
+    background-image: url(work-space.jpg);
+    background-size: 100%;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+    color: black;
+    margin-left: 20px;
+    flex: auto; }
+  
+  h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-style: oblique;
+    font-weight: 100;
+    margin-left: 30px; }
+  
+  .inputBox {
+    font-size: x-large;
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Courier New', Courier, monospace; }
+  
+    button {
+    font-size: x-large;
+    background-color: rgba(11, 89, 11, 0.68);
+    color: white; }
+
+    div {
+    margin:15px 0px 15px 0px;
+    }
+
+    .sortOne{
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: double;
+        border-color:black;
+        margin-right: 20px;
+    }
+
+    .sortTwo{
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: double;
+        border-color:black;
+    }
+
+    .editButton {
+        text-decoration: none;
+        color: black;
+        background-color: lightgray;
+        font-size: 18px;
+        border: double;
+        border-color:black;
+    }
+    .deleteButton{
+        text-decoration: none;
+        color: black;
+        background-color: lightgray;
+        font-size: 18px;
+        border: double;
+        border-color:black;
+    }
+    .moreButton {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: double;
+        border-color:black;
+    }
+    .lessButton {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: double;
+        border-color:black;
+    }
+
+   
