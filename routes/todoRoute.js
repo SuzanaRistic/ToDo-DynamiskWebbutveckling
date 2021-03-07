@@ -1,17 +1,32 @@
 const express = require("express");
-const Todo = require("../models/todo");
+const Todo = require("../models/todo.js");
 const router = express.Router(); 
+const verifyToken = require("./middleware/userVerify")
 
 
-router.get("/", async (req, res)=>{
+ router.get("/flash", (req,res)=>{
+
+    const msg = req.flash("info")
+     console.log(msg)
+
+     res.send("it works")
+
+ })
+
+router.get("/", verifyToken,  async (req, res)=>{
+    
+
     const sorted = + req.query.sorted || 1
     const page = +req.query.page || 1;
+    
 try{
      const totalData = await Todo.find().countDocuments();
      const dataToShowPerReq = 2;
+
      const totalDataPart = Math.ceil(totalData/dataToShowPerReq);
      
      const dataToShow= dataToShowPerReq * page
+     
     const data =  await Todo.find().limit(dataToShow).sort({name: sorted})
       res.render("index.ejs", 
       { data,
@@ -20,13 +35,14 @@ try{
         dataToShow,
         dataToShowPerReq,
         errors:"empty"} )
+    
 }
+
 catch(err){
     res.render("error.ejs", {error:err})
 } 
  })
  
-
 router.post("/", async (req, res)=>{
  console.log(  req.body.name) 
  try{
@@ -58,13 +74,11 @@ catch(err){
  })
  res.redirect("/")
  })
- 
 
  router.get("/delete/:id", async (req, res)=>{
      await Todo.deleteOne({_id:req.params.id})
-     
      res.redirect("/")
- })
  
+ })
 
  module.exports = router;

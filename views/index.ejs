@@ -12,11 +12,10 @@
 
 
     <%- include("add-data.ejs") %>
-
-
+   
     <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=-1" class="sortOne"> Sortera Z-A </a>
    <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=1" class="sortTwo"> Sortera A-Z  </a>
-   
+   <a href="/logout" class="logoutButton">Log out</a>
 
     <% for(let i=0; i <data.length; i++) { %>
 
@@ -38,7 +37,7 @@
 
     <% } else { %>
         <a href="/?page=1" class="lessButton">
-            visa mindre
+            Visa mindre
         </a>
     <% } %>
 

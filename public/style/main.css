@@ -47,6 +47,15 @@ body {
         font-size: 20px;
         border: double;
         border-color:black;
+        margin-right: 20px;
+    }
+    .logoutButton{
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: double;
+        border-color:black;
     }
 
     .editButton {
